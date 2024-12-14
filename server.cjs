@@ -1,14 +1,14 @@
 const express = require('express')
 const path = require('path')
 const app = express()
-const port = 3003
+const port = 3011
 
 const dirPath = path.resolve()
-app.use(express.static('./dist'))
+app.use(express.static('dist'))
 app.get('*', (req,res) => {
-    res.sendFile(path.resolve(dirPath,'frontend','dist','index.html'))
+    res.sendFile(path.resolve(dirPath,'dist','index.html'))
 })
 
 app.listen(port, () => {
-    console.log('server is running in 3003')
+    console.log(`server is running in ${port}`)
 })
